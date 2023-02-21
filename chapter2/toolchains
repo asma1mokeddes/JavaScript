@@ -1,0 +1,5 @@
+Toolchains (Chaîne de compilation) ou task-runners(un outil qui permet d'automatiser les tâches répétitives) "(Gulp / Grunt / WebPack)" :
+- lancer (au moment du lancement de l'appli) des taches pour avoir du code source le plus optomisé possible pret pour la prod.
+                        INPUTS    ->    Transformers ->    Generator
+
+- Webpack : il regroupe des modules(trie-checking), execute babel(compiling), lance un web-serveur
