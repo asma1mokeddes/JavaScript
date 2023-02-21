@@ -1,0 +1,115 @@
+Un polyfill : C’est un ensemble de fonctions permettant de simuler, 
+sur un navigateur web ancien, des fonctionnalités (en js) qui ne sont pas nativement disponible. 
+
+- wrappé = englobbé
+- Prototype (c'est un objet qui contient toutes les fonctions qu'il faut)
+-> on peut utiliser les fcts sans faire d'instances
+- classes en js -> sucre syntaxique
+- string.Prototype === "".__proto__
+
+
+- comment déclarer ?
+const myObject = {
+    p1: "foo"
+}
+
+function myObject = {
+    this.p1 = "foo"
+}
+
+const myObject = newObject();
+
+
+fonction classique / celle qu'on peut instancier!
+
+-------------------- L'héritage --------------------
+Comme nous l'avons vu, l'héritage est le mécanisme qui permet à des objets d'utiliser des propriétés et des méthodes 
+de modèles sans avoir à les réécrire.
+
+
+1 > L'héritage classique 
+L'héritage classique est basé sur les classes, qui sont des modèles d'objet, puis lorsque des instances sont créées depuis ces classes,
+l'ensemble des méthodes et des propriétés sont copiées sur l'instance.
+
+2 > L'héritage prototypal
+JavaScript est le seul langage connu  qui utilise l'héritage prototypal.
+Dans les langages utilisant l'héritage prototypal il n'existe pas de classes mais uniquement des objets.
+C'est le cas de JavaScript : nous verrons que les classes en JavaScript sont uniquement du sucre syntaxique pour favoriser l'adoption 
+du langage par les débutants et les développeurs venant de langages utilisant l'héritage classique.
+
+Il s'agit d'une forme d'héritage plus simple d'utilisation (mais plus complexe à comprendre) qui est puissante, plus concise et permet l'héritage dynamique.
+-> L'héritage dynamique permet de créer des liens et de modifier les objets dynamiquement. Ce qui est totalement impossible avec l'héritage classique
+
+-L'utilisation est plus simple car contrairement à l'héritage classique, il n'y a pas besoin de définir des classes, des interfaces, des classes abstraites,
+des classes virtuelles, des constructeurs etc. Il suffit de créer des objets et de créer des liens entre les objets.
+
+-------------------- Le [[Prototype]] et __proto__ --------------------
+En JavaScript, tous les objets ont une propriété spéciale interne le [[Prototype]].
+
+Si on fait :
+const obj = {};
+console.log(obj);
+
+On aura :
+{
+  __proto__: Object
+}
+Copier
+
+/////////////////////// DÉCLARATION D'OBJET ///////////////////////
+
+------------------------------ PUBLIC  ------------------------------
+si on souhaite déclarer un object public:
+
+        1 - { p1: "foo" }
+        2 - function myObject(){
+            this.p1 = "foo";
+        }
+        3 - myObject.prototype.p1 = "poo"
+
+si on souhaite déclarer une méthode :
+        1 - { p1: function1(){} }
+        2 - function myObject(){ // Fonction constructrice
+            this.p1 = function1(){};
+        }
+        3 - myObject.prototype.p1 = function1(){};
+
+// closure : existante de la fonciton fille tant que la mère est là
+
+------------------------------ PRIVÉ ------------------------------
+si on souhaite déclarer un object privé ou méthode avec {}> on ne peut pas déclarer un object privé par les {} on doit donc passer par des fonctions constructrices:
+function myObject(){} 
+function myObject(){
+    var p1 = "foo";
+}
+méthodes :
+ function myObject(){
+    var m1 = function(){};
+}
+
+- fonction prévéligiée -> setter & getter
+------------------------------ PRÉVÉLIGIÉ (protected) "public ac var privée ------------------------------
+si on souhaite déclarer un object prévéligié ou méthode avec les {} > on ne peut pas 
+si on souhaite déclarer un object prévéligié ou méthode avec les méthodes > on ne peut pas pour les objets mais pour les méthodes si
+function myObject(){
+    var p1= "foo"
+    var m1 = function(){
+        console.log(p1)
+    };
+}
+
+-- ucfirst on l'ajoute à tous les protoypes de chaine de char pour pouvoir l'utiliser (comme les fonctions natif sur les string :split etc) :
+ ma fonction :
+function ucfirst(){
+    const chaine = this;
+    return xxxx;
+}
+String.prototype.ucfirst = ucfirst
+
+donc si on fait : Object.prototype.ucfirst = function (){ xxx } -> cette fonction pourra etre utilisé sur tous les prototypes de type Object
+Exemples :
+const oldLog = console.log;
+console.log = function(arg) {alert(arg)};
+console.log("test") -> on aura test comme alerte
+console.log = oldLog; -> je le remets tel qu'il était (console.log et non alert)
+console.log("test") -> affiche test

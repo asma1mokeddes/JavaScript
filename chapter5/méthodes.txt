@@ -1,0 +1,32 @@
+" L'analyse s'arrête dès que le caractère n'est pas + ou -, chiffre, un espace, un point ou un exposant "
+
+
+----------------------------------- parseFloat() -----------------------------------
+La fonction parseFloat() permet d'analyser (parser) une chaîne de caractères afin de la
+transformer en nombre flottant.
+
+exemples :
+parseFloat(" 32.21frefz"); // 32.21
+parseFloat("   0.152e57  "); // 1.52e+56
+parseFloat(".1"); // 0.1
+parseFloat("a1"); // NaN
+
+----------------------------------- parseInt() -----------------------------------
+La fonction parseInt() permet d'analyser (parser) une chaîne de caractères afin de la transformer 
+en entier dans la base spécifiée.
+
+exemples :
+parseInt(" 32.21frefz", 10); // 32
+parseInt("10101", 2); // 21
+
+
+-----------------------------------------------------------------------------------
+
+isFinite() > pour savoir si il est fini
+isInteger() > que c'est un entier
+isNaN() > qu'il s'agit de NaN 
+isSafeInteger() > qu'il s'agit d'un entier sans overflow
+
+
+
+

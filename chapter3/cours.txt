@@ -1,0 +1,5 @@
+# Scope fermé (enclosing) -> façon d'enfermer une variable pour plus-tard 
+# Une fermeture existe si les trois conditions cumulatives suivantes sont remplies :
+# - Il existe une fonction imbriquée dans une autre fonction.
+# - La fonction imbriquée accède à une ou plusieurs variables de la fonction parente.
+# - La fonction parente doit retourner la fonction imbriquée.

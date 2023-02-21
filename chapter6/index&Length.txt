@@ -1,0 +1,8 @@
+// La propriété "length" :
+Les objets String, et donc les primitives string qui sont automatiquement converti temporairement comme nous l'avons vu, 
+ont une propriété length (pour longueur) qui indique le nombre d'unités de codage UTF-16 de la chaîne de caractères.
+
+// Utilisation de la syntaxe tableau "index" :
+- Vous pouvez accéder à chaque caractère d'une chaîne de caractères en utilisant la syntaxe tableau [index].
+'Salut ! 😀'[0]; // S
+'Salut ! 😀'[8]; // inconnu

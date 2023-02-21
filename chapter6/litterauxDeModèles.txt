@@ -1,0 +1,37 @@
+
+// Les littéraux de chaînes de caractères ou littéraux de gabarits (template literals en anglais) :
+Ce sont des chaînes de caractères utilisant des accents graves `.
+
+Sans les littéraux de gabarits vous devez utiliser des échappements pour des caractères spéciaux 
+permettant de sauter des lignes et des pages ou de faire des tabulations.
+
+Exemples de caractères d'échappement :
+\n // saut de ligne line feed
+\t // tabulation
+\f // saut de page
+\' // échappement guillemet simple
+\" // échappement guillemet double
+
+
+
+// L'écriture multilignes et l'emploi de guillemets :
+Les littéraux de chaînes de caractères permettent d'inclure, tous les espaces, y compris les sauts de ligne et l'indentation
+dans le résultat. Ce qui est vraiment très pratique.
+Quel que soit votre environnement, les sauts de lignes seront normalisés automatiquement en line feed (\n).
+
+// L'interpolation d'expressions :
+Les littéraux de chaînes de caractères permettent ce qu'on appelle des substitutions de chaînes de caractères ou interpolation 
+d'expressions en utilisant $ {}.
+Elles permettent d'évaluer toute expression JavaScript (fonctions, expressions arithmétiques, variables etc), ce qui est très
+pratique.
+Exemples :
+- `Bonjour ${utilisateur.nom}, il reste ${joursAbonnement} jours à votre abonnement.`;
+- var utilisateur = {nom: 'Jean Dupont’}; console.log(`Bienvenue, ${utilisateur.nom.toUpperCase()}.`); // Bienvenue, JEAN DUPONT.
+
+Remarque :
+Un littéral de chaînes de caractères peuvent être interpolés dans un autre littéral de chaîne de caractères. Cela peut parfois
+être très utile comme le montre l'exemple suivant :
+const fatigue = true;
+const action = 'dormir';
+const etatDeFatigue =   `Jean est ${fatigue ? `fatigué et veut ${action} !` : `en pleine forme !`}`;
+console.log(etatDeFatigue); // Jean est fatigué et veut dormir !"
