@@ -1,0 +1,16 @@
+ou executer du js ?
+- Navigateurs :
+    * Page web :
+        - balise <script>
+        - fichier .js
+    * Console (celle du nav)
+    * extensions 
+        - Chrome
+
+- Terminal (serveur) :
+    * Node
+
+- Base de données:
+    * MongoDB ( ele stocke que du json et son langage de requetage est le Js)
+
+    

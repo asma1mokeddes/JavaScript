@@ -1,0 +1,24 @@
+// Ecmascript : Ensemble de règles que doit avoir les langages de scripting 
+// Avant : Js animait seulement les pages html
+// Maintenant : Création de l'objet xmlhttprequest ( crée par microsoft ), permet de réaliser des requetes depuis le js 
+// à un serveur sans pour autant rafraichir la page du client ( nav de l'utilisateur).
+
+// Langage éternel ! Impossible de tout casser et que tous les apps seront obsolètes 
+
+
+----------------------------- C'est quoi JS ? ----------------------------------------------------
+// JavaScript est un langage de programmation qui permet de générer et de modifier dynamiquement du contenu HTML et CSS. 
+// Il permet également d'interagir avec les API des navigateurs.
+// JavaScript est un langage qui a été codé en 10 jours en 1995 par Brendan eich. (version1)
+// actuellement on est sur du ES20
+
+------------------------------  Nommage :  -------------------------------------------------------
+Livescript -> mocha -> Javascript ( java c'était le langage qui était à la mode à l'époque)
+
+
+---------------------------- L'explosion du JavaScript avec l'objet XMLHttpRequest et Node.js ----------------------------
+
+1 -> Coté client : L'objet XMLHttpRequest permet de ne plus avoir à recharger la totalité d'une page lorsque seule une partie 
+de celle-ci doit changer. (Avant la création de cet objet : rendu serveur ? ).
+
+2 -> Avec NodeJs, on a la possibilité d'utiliser Js sur les serveurs.

@@ -1,0 +1,31 @@
+Javascript est faiblement typé et interprété
+
+
+Rappel : 
+        - Langage compilé : {code} -> compilateur -> Exécutable
+        - Langage interpreté : {code} -> interpreteur(Comprendre le contenu du code et l'éxecuter)
+
+Interpreteurs JS :
+        -> Navigateurs : Chaque navigateur a son propre interpreteur qui va permettre d'éxecuter du javascript.
+            - V8 pour chrome, SpiderMonkey pour firefox et Nitro pour safari.
+        -> Serveurs :
+            - V8 pour NodeJs
+
+Les principales caractéristiques de JavaScript :
+
+1 -> Langage faiblement(dynamiquement) typé : 
+Car les types sont vérifiés lors de l'exécution du langage.
+Remarque : L'inverse est le typage statique et oblige à indiquer le type de chaque variable dans le code.
+Les types sont alors vérifiés lors de la compilation.
+
+2 -> Un langage fondé sur les prototypes :
+L'utilisation de prototypes est une forme de programmation orientée objet qui n'utilise pas de classe mais des prototypes qui 
+sont des objets à partir desquels ont peut créer d'autres objets.
+
+3 -> Un langage orienté objet :
+JavaScript est un langage orienté objet car il permet d'utiliser la programmation orientée objet (OOP pour Object-oriented programming).
+Dans ce paradigme, les programmes créent des objets et les font interagir entre eux.
+
+4 -> Un langage multi-paradigmes :
+JavaScript est un langage multi-paradigmes car il est possible d'utiliser différents paradigmes dans le même programme, il est ainsi
+possible d'utiliser les paradigmes fonctionnel, impératif et basé sur les évènements.
