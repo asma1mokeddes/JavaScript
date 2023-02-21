@@ -1,0 +1,23 @@
+/// Introduction aux chaînes de caractères
+ 
+- UTF-16 -> Il faut donc pour encoder un caractère a minima 16 bits.
+- Avec le système binaire : c'est un système de numération utilisant la base 2. Tous les nombres entiers peuvent être 
+ exprimés sous forme de série de 0 et de 1.
+- Pourquoi bit ? Tout simplement car c'est un raccourci pour Binary digIT.
+
+
+
+/// Unités de mesures :
+- Octet, c'est une unité de mesure standard qui équivaut strictement à 8 bits.
+- Unicode est le standard mondial pour coder les caractères de toutes les langues en informatique, exemples :
+1F600 est le code pour 😀, 1D11E est le code pour 𝄞 etc
+
+remarque : console.log('\uD83D\uDE00'); // 😀 > on doit utiliser \u pour indiquer que nous utilisons le standard Unicode.
+
+// Utiliser des méthodes et fonctions sur les primitives :
+- Comme pour les nombres, nous verrons que nous pouvons utiliser des méthodes directement sur les primitives String.
+- Ce qui se passe en fait est que l'interpréteur JavaScript va automatiquement convertir votre chaîne de caractères 
+primitive en objet JavaScript String temporaire qui va pouvoir accéder aux méthodes et aux fonctions.
+- Une fois la méthode ou la fonction appliquée, l'objet temporaire est supprimé et c'est bien une valeur primitive,
+c'est-à-dire une chaîne de caractères string qui est retournée.
+

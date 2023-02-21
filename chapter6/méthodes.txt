@@ -1,0 +1,99 @@
+Remarque :
+- Les primitives, et donc notamment les string sont immuables, il est impossible de les modifier.
+> la conséquence est que toutes les méthodes utilisées sur des chaînes de caractères renverront une nouvelle chaîne de
+caractères sans modifier la chaîne de caractères originelle.
+
+/////////////////////////////////////// Effectuer des vérifications ///////////////////////////////////////
+
+1 > includes() : permet de savoir si une chaîne de caractères est incluse dans la chaîne de caractères
+'petit koala'.includes('Koala'); // false car importe la casse
+'petit koala'.includes('koala', 10); // false car on lui dit à partir du 10 ème caractère
+
+2 > startsWith() : permet de savoir si une chaîne de caractères commence par une autre chaîne de caractères.
+'petit koala'.startsWith('petit'); // true
+'petit koala'.startsWith('petit', 1); // false
+
+3 > endsWith() : permet de savoir si une chaîne de caractères finit par une autre chaîne de caractères.
+'petit koala'.endsWith('koala'); // true
+
+4 > toUpperCase() : mettre tous les caractères en majuscule :
+'Bonjour !'.toUpperCase(); // BONJOUR !
+
+5 > toLowerCase() : mettre tous les caractères en miniscule :
+'Bonjour !'.toLowerCase(); // bonjour !
+
+
+/////////////////////////////////////// Rechercher ///////////////////////////////////////
+
+1 > charAt() : récupérer le caractère à une position donné
+'Bonjour'.charAt(2); // n
+
+2 > indexOf() : renvoie la position, dans la chaîne de caractères, de la première occurrence de la chaîne de 
+caractères passée en argument, Si la chaîne n'est pas trouvée alors la valeur de retour est -1.
+'Bonjour Paul ! Bonjour Stéphane'.indexOf('Bonjour'); // 0
+'Bonjour Paul ! Bonjour Stéphane'.indexOf('bonjour'); // -1
+'Bonjour Paul ! Bonjour Stéphane'.indexOf('Bonjour', 10); // 15
+
+3 > lastIndexOf() : renvoie la position, dans la chaîne de caractères, de la dernière occurrence de la chaîne de
+caractères passée en argument.
+'Bonjour Paul ! Bonjour Stéphane'.lastIndexOf('Bonjour'); // 15
+'Bonjour Paul ! Bonjour Stéphane'.lastIndexOf('bonjour'); // -1
+
+Attention ! Si vous passez ici une position la recherche se fait depuis la position précisée jusqu'au début de la chaîne 
+de caractères : 
+'Bonjour Paul ! Bonjour Stéphane'.lastIndexOf('Bonjour', 10); // 0
+
+
+
+/////////////////////////////////////// Modifier une ou plusieurs chaînes de caractères ///////////////////////////////////////
+
+1 > concat :  concatène plusieurs chaînes de caractères passées en arguments avec la chaîne appelante et renvoie la 
+nouvelle chaîne ainsi formée -> équivaut à utiliser +
+'Bonjour'.concat(' !', ' ', 'Comment ', 'ça va ?'); // Bonjour ! Comment ça va ? 
+
+2 > split :  permet de diviser une chaîne de caractères en utilisant le séparateur passé en argument pour fournir un 
+tableau de chaînes de caractères.
+'Bonjour ! Comment ça va ?'.split(' '); // ["Bonjour", "!", "Comment", "ça", "va", "?"]
+'Bonjour ! Comment ça va ?'.split('!'); // ["Bonjour ", " Comment ça va ?"]
+
+Vous pouvez préciser en second argument le nombre maximal de chaînes à conserver :
+'Bonjour ! Comment ça va ?'.split(' ', 3); // ["Bonjour", "!", "Comment"]
+
+3 > slice : permet d'extraire une partie d'une chaîne de caractères en passant deux arguments : la position du début de 
+la chaîne à extraire et éventuellement la position de fin.
+- Si une position négative est précisée, la position sera calculée à partir de la fin de la chaîne de caractères.
+- Si seule la position de début est précisée, l'extraction se fera jusqu'à la fin.
+'Bonjour ! Comment ça va ?'.slice(2, 5); // njo
+'Bonjour ! Comment ça va ?'.slice(10); // Comment ça va ?
+'Bonjour ! Comment ça va ?'.slice(-2); //  ?
+'Bonjour ! Comment ça va ?'.slice(-8, -2); //  ça va
+
+4 > substring : 
+- ne peut utiliser que des positions positives : 'Bonjour ! Comment ça va ?'.substring(-8, -2); // "" (chaîne de caractères vide)
+- si la position de début est supérieure à la position de fin les valeurs sont inversées automatiquement : 
+'Bonjour ! Comment ça va ?'.substring(4, 2); // nj
+
+5 > repeat : permet de concaténer plusieurs fois une chaîne de caractères à la suite d'une chaîne de caractères
+'Je ne copierai plus sur mon voisin.
+'.repeat(30); // pratique
+`Je ne copierai plus sur mon voisin.
+`.repeat(30); // en utilisant les littéraux de modèle
+ 
+
+6 > trim :  permet de retirer les espaces, les tabulations, les sauts de lignes etc, au début et à la fin d'une chaîne
+de caractères :
+'  Salut !'.trim(); // Salut !
+
+7 > Les méthodes trimStart() ou son alias trimLeft() permettent de ne retirer que les espaces en début de chaîne de caractères.
+
+
+///////// Compléter une chaîne de caractères par une chaîne de caractères pour obtenir une longueur fixe /////////////
+
+Les méthodes padStart() et padEnd() permettent de compléter une chaîne de caractères par une chaîne de caractères pour obtenir
+la longueur spécifiée : 
+const numeroCarte = '4678628353263149';
+const quatreDerniersChiffres = numeroCarte.slice(-4);
+const numeroObfusque = quatreDerniersChiffres.padStart(numeroCarte.length, '*');
+console.log(numeroObfusque); ************3149
+'a'.padEnd(5,'*'); // a****
+'a'.padEnd(5); // "a    "

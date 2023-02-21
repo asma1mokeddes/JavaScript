@@ -1,0 +1,11 @@
+Une expression régulière ou expression rationnelle est une chaîne de caractères, qui décrit, en utilisant une syntaxe
+précise, un ensemble de chaînes de caractères possibles.
+
+- En JavaScript les expressions régulières sont des objets RegExp :
+Elles se déclarent de trois façons :
+1 - soit en utilisant le constructeur avec le mot clé new -> const regex2 = new RegExp('\w+');
+2 - soit en utilisant // (déclaration littérale) -> const regex1 = /.+/;
+3 - soit enfin en utilisant simplement un objet RegExp -> const regex3 = RegExp('\w+');
+
+
+

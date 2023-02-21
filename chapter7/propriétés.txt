@@ -1,0 +1,80 @@
+- Les objets JavaScript peuvent avoir une ou plusieurs propriétés.
+- Il est possible de déclarer des propriétés avec le point . ou en utilisant des crochets.
+
+----------------------------------- Déclaration de propriétés -----------------------------------
+1 > En utilisant le point . : 
+const monObjet = {};
+monObjet.propriete1 = 42;
+monObjet.propriete2 = "Koala";
+console.log(monObjet); // {propriete1: 42, propriete2: "Koala"}
+
+
+2 > En utilisant les crochets [ ] : 
+const monObjet = {};
+monObjet["prop1"] = 42;
+monObjet['prop2'] = "Koala";
+monObjet['Une autre propriété'] = 14664441n;
+console.log(monObjet); // {prop1: 42, prop2: "Koala", Une autre propriété: 14664441n}
+
+// Il existe deux cas où la définition de propriété avec les crochets est obligatoire :
+            - en utilisant le contenu d'une variable comme clé
+                let unePropVariable = "Koala";
+                const monObjet = {};
+                monObjet[unePropVariable] = 42; // nom de propriété calculé
+                console.log(monObjet); // {Koala: 42}
+            - lorsque la clé contient des espaces.
+
+
+----------------------------------- Accèder aux propriétés d'un objet -----------------------------------
+
+Objet >> const terre = {
+            population: 7e7,
+            satellite: 'Lune',
+            temperature :{
+                min: -70,
+                max: 40
+            },
+            isOld: true,
+            getTemperature: function(){
+                console.log("50");
+            }
+            }
+
+>> En utilisant des points ou crochets :
+        const propre = 'temperature';
+        console.log(terre.population);
+        console.log(terre['satellite']); // oblg de mettre les '' pour la chaine
+        console.log(terre[propre]); // pas oblg de mettre les ''
+
+
+----------------------------------- Modifier aux propriétés d'un objet -----------------------------------
+const monObjet = {};
+monObjet["prop1"] = 42;
+monObjet.prop1 = 43;
+
+// Rappel : les objets sont passés par référence. 
+const copy = terre; // font référence au meme objet
+copy.population = 200;
+console.log(terre) // popluation 200
+console.log(terre.getTemperature) // une fct 
+// et pour invoquer la fct
+console.log(terre.getTemperature())
+
+
+
+----------------------------------- Les méthodes d'un objet -----------------------------------
+// Les méthodes d'un objet sont des propriétés dont la valeur sont des fonctions (méthode : c'est une fonction qui appartient à un objet)
+const monObjet = {
+  direBonjour: function() {
+    console.log("Salut !");
+  }
+};
+monObjet.direBonjour(); // Salut !
+    
+// Il existe également une notation raccourcie pour la déclaration de méthodes :
+const monObjet = {
+  direBonjour() {
+    console.log("Salut !");
+  }
+};
+monObjet.direBonjour(); // Salut !

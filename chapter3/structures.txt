@@ -1,0 +1,40 @@
+Bloc de structure :
+    - les boucles >
+        * for
+        * for ... in/of "of -> values (tableaux) et in -> propriétés (objets)"
+        * do while
+        * while 
+
+    - les conditions 
+
+// leet :
+    function leet (chaine) {
+    const tableau = Array.from(chaine);
+
+    for(let i=0;i<chaine.length; i++){
+        switch (tableau[i]) {
+            case 'a':
+                tableau[i]= '4'
+                break;
+            case 'e':
+                tableau[i] = '3'
+                break; 
+            case 'i':
+                tableau[i] = '1'
+                break;
+            case 'o':
+                tableau[i] = '0'
+                break;
+            case 'u':
+                tableau[i] = '_'
+                break;
+            case 'y':
+                tableau[i] = '7'
+                break;
+            default:
+                break;
+        }
+    }
+       return tableau.join('')
+}
+console.log(leet('anaconda'));

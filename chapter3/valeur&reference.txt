@@ -1,0 +1,29 @@
+En JavaScript : 
+1- les primitives sont passées par valeur et sont immuables.
+2- et les objets par référence.
+
+
+// Quelle sont les primitives en js :
+les booléens, null, undefined, les nombres, les BigInt, les chaînes de caractères et les symboles.
+
+///// Passage par valeur :
+Lorsque l'on assigne une valeur primitive à une variable, la valeur est copiée sur un nouvel
+emplacement mémoire.
+
+const a = 1;
+let b = a;
+console.log(a, b); // 1 1
+
+b = 2;
+console.log(a, b); // 1 2
+La valeur contenue dans a n'a pas été modifiée car lorsque nous faisons b = a, nous copions
+la valeur contenu dans a dans un nouvel emplacement mémoire pour b.
+-> Cela entraîne le fait que les primitives sont immuables, elles ne peuvent pas être modifiées.
+
+///// Passage par référence :
+Une référence à un objet est son adresse dans la mémoire.
+Comme les objets peuvent être très volumineux il est beaucoup plus efficient de ne pas les copier 
+à chaque fois mais de passer leur référence, c'est-à-dire leur adresse, lors d'assignations :
+
+
+
